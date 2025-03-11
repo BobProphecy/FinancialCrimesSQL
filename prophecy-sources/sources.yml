@@ -1,0 +1,75 @@
+---
+version: 2
+sources:
+- name: "BOBW.FINANCIALCRIMES"
+  database: "BOBW"
+  schema: "FINANCIALCRIMES"
+  config:
+    enabled: true
+  tables:
+  - name: "WIRE_TRANSFERS"
+    description: "Records of wire transfers, capturing details about sender and recipient\
+      \ accounts, transaction amounts, and originating and destination countries."
+    quoting:
+      identifier: true
+    columns:
+    - name: "TRANSACTION_ID"
+      description: "Unique identifier for each wire transfer transaction"
+      dataType:
+        type: "Number"
+    - name: "FIRST_NAME"
+      description: "The first name of the individual involved in the wire transfer."
+      dataType:
+        type: "String"
+    - name: "LAST_NAME"
+      description: "The last name of the individual involved in the wire transfer"
+      dataType:
+        type: "String"
+    - name: "FROM_BANK"
+      description: "The bank from which the funds are being transferred"
+      dataType:
+        type: "String"
+    - name: "FROM_ACCOUNT_NUMBER"
+      description: "Account number from which the funds are transferred"
+      dataType:
+        type: "String"
+    - name: "TO_BANK"
+      description: "The bank receiving the funds in the transaction"
+      dataType:
+        type: "String"
+    - name: "TO_ACCOUNT_NUMBER"
+      description: "Account number where the funds are being transferred to"
+      dataType:
+        type: "String"
+    - name: "ORIGINATING_COUNTRY"
+      description: "Country from which the wire transfer originates"
+      dataType:
+        type: "String"
+    - name: "DESTINATION_COUNTRY"
+      description: "Country where the funds are being transferred to"
+      dataType:
+        type: "String"
+    - name: "TRANSACTION_AMOUNT"
+      description: "The total amount of money transferred in the transaction"
+      dataType:
+        type: "Number"
+  - name: "COUNTRY_WATCHLIST"
+    columns:
+    - name: "COUNTRY"
+      dataType:
+        type: "String"
+    - name: "ISSUE"
+      dataType:
+        type: "String"
+  - name: "INDIVIDUAL_WATCHLIST"
+    description: "List of individuals under scrutiny, aiding in risk management and\
+      \ compliance efforts."
+    columns:
+    - name: "FULL_NAME"
+      description: "The complete name of the individual on the watchlist"
+      dataType:
+        type: "String"
+    - name: "REASON"
+      description: "The justification for including the individual on the watchlist"
+      dataType:
+        type: "String"

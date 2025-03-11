@@ -1,0 +1,197 @@
+name: FinancialCrimesSQL
+description: ''
+version: 0.0.1
+author: bobw@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-03-11 15:11:35'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/FinancialCrimesScoring:
+    name: FinancialCrimesScoring
+    schema:
+      entityType: ''
+      providerType: Snowflake
+      fields:
+      - name: TRANSACTION_ID
+        dataType:
+          type: Number
+      - name: FULL_NAME
+        dataType:
+          type: String
+      - name: INDIVIDUAL_REASON
+        dataType:
+          type: String
+      - name: FROM_BANK
+        dataType:
+          type: String
+      - name: FROM_ACCOUNT_NUMBER
+        dataType:
+          type: String
+      - name: TO_BANK
+        dataType:
+          type: String
+      - name: TO_ACCOUNT_NUMBER
+        dataType:
+          type: String
+      - name: ORIGINATING_COUNTRY
+        dataType:
+          type: String
+      - name: ORIG_ISSUE
+        dataType:
+          type: String
+      - name: DESTINATION_COUNTRY
+        dataType:
+          type: String
+      - name: DEST_ISSUE
+        dataType:
+          type: String
+      - name: TRANSACTION_AMOUNT
+        dataType:
+          type: Number
+      - name: FLAG_INDIVIDUAL_REASON
+        dataType:
+          type: Number
+      - name: FLAG_ORIG_COUNTRY
+        dataType:
+          type: Number
+      - name: FLAG_DEST_COUNTRY
+        dataType:
+          type: Number
+      - name: FLAG_TRANS_AMOUNT
+        dataType:
+          type: Number
+      - name: RISK_SCORE
+        dataType:
+          type: Number
+    description: Scored wire transfers
+    author: bobw@prophecy.io
+    files:
+    - models/FinancialCrimesScoring.sql
+    - .prophecy/ide/models/FinancialCrimesScoring.json
+    - models/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2025-03-11 15:21:39'
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: bobw@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-03-11 15:11:38'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/BOBW_FINANCIALCRIMES:
+    name: BOBW.FINANCIALCRIMES
+    description: null
+    author: bobw@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-03-11 15:21:53'
+    tables:
+    - name: WIRE_TRANSFERS
+      schema:
+        entityType: ''
+        providerType: snowflake
+        fields:
+        - name: TRANSACTION_ID
+          dataType:
+            type: Number
+        - name: FIRST_NAME
+          dataType:
+            type: String
+        - name: LAST_NAME
+          dataType:
+            type: String
+        - name: FROM_BANK
+          dataType:
+            type: String
+        - name: FROM_ACCOUNT_NUMBER
+          dataType:
+            type: String
+        - name: TO_BANK
+          dataType:
+            type: String
+        - name: TO_ACCOUNT_NUMBER
+          dataType:
+            type: String
+        - name: ORIGINATING_COUNTRY
+          dataType:
+            type: String
+        - name: DESTINATION_COUNTRY
+          dataType:
+            type: String
+        - name: TRANSACTION_AMOUNT
+          dataType:
+            type: Number
+      description: Records of wire transfers, capturing details about sender and recipient
+        accounts, transaction amounts, and originating and destination countries.
+      author: bobw@prophecy.io
+      createdAt: '2025-03-11 15:21:53'
+    - name: COUNTRY_WATCHLIST
+      schema:
+        entityType: ''
+        providerType: snowflake
+        fields:
+        - name: COUNTRY
+          dataType:
+            type: String
+        - name: ISSUE
+          dataType:
+            type: String
+      description: null
+      author: bobw@prophecy.io
+      createdAt: '2025-03-11 15:22:30'
+    - name: INDIVIDUAL_WATCHLIST
+      schema:
+        entityType: ''
+        providerType: snowflake
+        fields:
+        - name: FULL_NAME
+          dataType:
+            type: String
+        - name: REASON
+          dataType:
+            type: String
+      description: List of individuals under scrutiny, aiding in risk management and
+        compliance efforts.
+      author: bobw@prophecy.io
+      createdAt: '2025-03-11 15:22:38'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: bobw@prophecy.io
+  createdAt: '2025-03-11 15:11:35'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}

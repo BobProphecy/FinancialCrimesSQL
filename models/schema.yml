@@ -1,0 +1,58 @@
+---
+version: 2
+models:
+- name: "FinancialCrimesScoring"
+  description: "Scored wire transfers"
+  columns:
+  - name: "FLAG_ORIG_COUNTRY"
+    dataType:
+      type: "Number"
+  - name: "FLAG_TRANS_AMOUNT"
+    dataType:
+      type: "Number"
+  - name: "TO_ACCOUNT_NUMBER"
+    dataType:
+      type: "String"
+  - name: "ORIG_ISSUE"
+    dataType:
+      type: "String"
+  - name: "RISK_SCORE"
+    dataType:
+      type: "Number"
+  - name: "FROM_ACCOUNT_NUMBER"
+    dataType:
+      type: "String"
+  - name: "TRANSACTION_ID"
+    dataType:
+      type: "Number"
+  - name: "ORIGINATING_COUNTRY"
+    dataType:
+      type: "String"
+  - name: "DESTINATION_COUNTRY"
+    dataType:
+      type: "String"
+  - name: "FROM_BANK"
+    dataType:
+      type: "String"
+  - name: "TO_BANK"
+    dataType:
+      type: "String"
+  - name: "TRANSACTION_AMOUNT"
+    dataType:
+      type: "Number"
+  - name: "FULL_NAME"
+    dataType:
+      type: "String"
+  - name: "INDIVIDUAL_REASON"
+    dataType:
+      type: "String"
+  - name: "FLAG_INDIVIDUAL_REASON"
+    dataType:
+      type: "Number"
+  - name: "DEST_ISSUE"
+    dataType:
+      type: "String"
+  - name: "FLAG_DEST_COUNTRY"
+    dataType:
+      type: "Number"
+  tests: []
