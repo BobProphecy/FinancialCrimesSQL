@@ -13,431 +13,57 @@
         "materialized" : "table",
         "schema" : "\"financialcrimes\"",
         "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
       }
     },
     "version" : 3
   },
   "processes" : {
-    "fAl7lH7lsz-ET4Xw0aDZi$$zl0zkulcAXwgzhrzxSoh5" : {
-      "id" : "fAl7lH7lsz-ET4Xw0aDZi$$zl0zkulcAXwgzhrzxSoh5",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "wire_transfer_details",
-        "slug" : "wire_transfer_details",
-        "x" : -200,
-        "y" : -200,
-        "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Compiles detailed information on wire transfer transactions for better tracking and analysis.",
-        "autoUpdateComment" : true,
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##TRANSACTION_ID", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##FIRST_NAME", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##LAST_NAME", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##FROM_BANK", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##FROM_ACCOUNT_NUMBER", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##TO_BANK", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##TO_ACCOUNT_NUMBER", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##ORIGINATING_COUNTRY", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##DESTINATION_COUNTRY", "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI##TRANSACTION_AMOUNT" ],
-        "expressions" : [ {
-          "expression" : {
-            "expression" : "TRANSACTION_ID"
-          },
-          "alias" : "TRANSACTION_ID",
-          "_row_id" : "547240871"
-        }, {
-          "expression" : {
-            "expression" : "CONCAT(FIRST_NAME, ' ', LAST_NAME)"
-          },
-          "alias" : "full_name",
-          "_row_id" : "O4zzK76s_D"
-        }, {
-          "expression" : {
-            "expression" : "FROM_BANK"
-          },
-          "alias" : "FROM_BANK",
-          "_row_id" : "1286082363"
-        }, {
-          "expression" : {
-            "expression" : "FROM_ACCOUNT_NUMBER"
-          },
-          "alias" : "FROM_ACCOUNT_NUMBER",
-          "_row_id" : "1806260708"
-        }, {
-          "expression" : {
-            "expression" : "TO_BANK"
-          },
-          "alias" : "TO_BANK",
-          "_row_id" : "297873802"
-        }, {
-          "expression" : {
-            "expression" : "TO_ACCOUNT_NUMBER"
-          },
-          "alias" : "TO_ACCOUNT_NUMBER",
-          "_row_id" : "975207289"
-        }, {
-          "expression" : {
-            "expression" : "ORIGINATING_COUNTRY"
-          },
-          "alias" : "ORIGINATING_COUNTRY",
-          "_row_id" : "744036872"
-        }, {
-          "expression" : {
-            "expression" : "DESTINATION_COUNTRY"
-          },
-          "alias" : "DESTINATION_COUNTRY",
-          "_row_id" : "797816115"
-        }, {
-          "expression" : {
-            "expression" : "ROUND(TRANSACTION_AMOUNT, 2)"
-          },
-          "alias" : "transaction_amount",
-          "_row_id" : "GDB0PQDbCC"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI",
-          "slug" : "WIRE_TRANSFERS"
-        } ],
-        "outputs" : [ {
-          "id" : "OeA9aR0gVCCL6AdBSJ5sn$$zvVp4CNp1wWpHLoDKjUBc",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "kQ17OGjbimrKmEdYPEwmE" : {
-      "id" : "kQ17OGjbimrKmEdYPEwmE",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "ORIG_COUNTRY",
-        "slug" : "ORIG_COUNTRY",
-        "x" : -360,
-        "y" : -60,
-        "phase" : 0,
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "table" : {
-          "name" : "COUNTRY_WATCHLIST",
-          "sourceType" : "Source",
-          "sourceName" : "BOBW.FINANCIALCRIMES",
-          "alias" : "",
-          "additionalProperties" : null
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "y3xwoQ4SzOL_0M0D9Swm_",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "T-8ypAs3IZ2jbVuh4WGQp" : {
-      "id" : "T-8ypAs3IZ2jbVuh4WGQp",
+    "INDIVIDUAL_WATCH##dbtSIAkK" : {
+      "id" : "INDIVIDUAL_WATCH##dbtSIAkK",
       "component" : "Source",
       "metadata" : {
         "label" : "INDIVIDUAL_WATCHLIST",
-        "slug" : "INDIVIDUAL_WATCHLIST",
-        "x" : -360,
-        "y" : 240,
-        "phase" : 0
+        "x" : 220,
+        "y" : 620,
+        "phase" : 0,
+        "comment" : "Accesses the individual watchlist for monitoring financial crimes.",
+        "isLabelGrayed" : false
       },
       "properties" : {
         "table" : {
           "name" : "INDIVIDUAL_WATCHLIST",
           "sourceType" : "Source",
-          "sourceName" : "BOBW.FINANCIALCRIMES",
-          "alias" : "",
-          "additionalProperties" : null
+          "sourceName" : "BOBW.FINANCIALCRIMES"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "huGZ2DnahRzU96xt0J59z",
+          "id" : "iIqfcMn7",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 3
     },
-    "mk2Zqi3exOWjg_n7GsKfo$$AXOPDx1x36v7dY8zMxkUr" : {
-      "id" : "mk2Zqi3exOWjg_n7GsKfo$$AXOPDx1x36v7dY8zMxkUr",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "score_trans",
-        "slug" : "score_trans",
-        "x" : 120,
-        "y" : 0,
-        "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Gathers detailed information on wire transfers, highlighting key factors such as transaction amounts and reasons for transfers.",
-        "autoUpdateComment" : true,
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##TRANSACTION_ID", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##FULL_NAME", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##INDIVIDUAL_REASON", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##FROM_BANK", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##FROM_ACCOUNT_NUMBER", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##TO_BANK", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##TO_ACCOUNT_NUMBER", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##ORIGINATING_COUNTRY", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##ORIG_ISSUE", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##DESTINATION_COUNTRY", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##DEST_ISSUE", "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU##TRANSACTION_AMOUNT" ],
-        "expressions" : [ {
-          "expression" : {
-            "expression" : "TRANSACTION_ID"
-          },
-          "alias" : "TRANSACTION_ID",
-          "_row_id" : "1311222970"
-        }, {
-          "expression" : {
-            "expression" : "FULL_NAME"
-          },
-          "alias" : "FULL_NAME",
-          "_row_id" : "730150752"
-        }, {
-          "expression" : {
-            "expression" : "INDIVIDUAL_REASON"
-          },
-          "alias" : "INDIVIDUAL_REASON",
-          "_row_id" : "981218955"
-        }, {
-          "expression" : {
-            "expression" : "FROM_BANK"
-          },
-          "alias" : "FROM_BANK",
-          "_row_id" : "1909720588"
-        }, {
-          "expression" : {
-            "expression" : "FROM_ACCOUNT_NUMBER"
-          },
-          "alias" : "FROM_ACCOUNT_NUMBER",
-          "_row_id" : "1651877138"
-        }, {
-          "expression" : {
-            "expression" : "TO_BANK"
-          },
-          "alias" : "TO_BANK",
-          "_row_id" : "806712011"
-        }, {
-          "expression" : {
-            "expression" : "TO_ACCOUNT_NUMBER"
-          },
-          "alias" : "TO_ACCOUNT_NUMBER",
-          "_row_id" : "1160554563"
-        }, {
-          "expression" : {
-            "expression" : "ORIGINATING_COUNTRY"
-          },
-          "alias" : "ORIGINATING_COUNTRY",
-          "_row_id" : "1557826216"
-        }, {
-          "expression" : {
-            "expression" : "ORIG_ISSUE"
-          },
-          "alias" : "ORIG_ISSUE",
-          "_row_id" : "1740738935"
-        }, {
-          "expression" : {
-            "expression" : "DESTINATION_COUNTRY"
-          },
-          "alias" : "DESTINATION_COUNTRY",
-          "_row_id" : "1659107029"
-        }, {
-          "expression" : {
-            "expression" : "DEST_ISSUE"
-          },
-          "alias" : "DEST_ISSUE",
-          "_row_id" : "1245731470"
-        }, {
-          "expression" : {
-            "expression" : "TRANSACTION_AMOUNT"
-          },
-          "alias" : "TRANSACTION_AMOUNT",
-          "_row_id" : "337764871"
-        }, {
-          "expression" : {
-            "expression" : "CASE\n  WHEN INDIVIDUAL_REASON IS NOT NULL AND INDIVIDUAL_REASON <> ''\n    THEN 1\n  ELSE 0\nEND"
-          },
-          "alias" : "flag_individual_reason",
-          "_row_id" : "1148356154"
-        }, {
-          "expression" : {
-            "expression" : "CASE\n  WHEN ORIG_ISSUE IS NOT NULL AND ORIG_ISSUE <> ''\n    THEN 1\n  ELSE 0\nEND"
-          },
-          "alias" : "flag_orig_country",
-          "_row_id" : "vzSKyvrbdc"
-        }, {
-          "expression" : {
-            "expression" : "CASE\n  WHEN DEST_ISSUE IS NOT NULL AND DEST_ISSUE <> ''\n    THEN 1\n  ELSE 0\nEND"
-          },
-          "alias" : "flag_dest_country",
-          "_row_id" : "9LWcnacSGs"
-        }, {
-          "expression" : {
-            "expression" : "CASE WHEN TRANSACTION_AMOUNT >= 5000 AND TRANSACTION_AMOUNT < 10000 THEN 1 ELSE 0 END"
-          },
-          "alias" : "flag_trans_amount",
-          "_row_id" : "QlrYHPw91O"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU",
-          "slug" : "wire_transfer_joins"
-        } ],
-        "outputs" : [ {
-          "id" : "PFbWNw4439bcnPNU2M013$$_x4AFtH_H_OPnOnlKUSLI",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "wUgA6ZQQ794GdIUYQ4gX0$$5iHTNzon-II7-6CqA9jng" : {
-      "id" : "wUgA6ZQQ794GdIUYQ4gX0$$5iHTNzon-II7-6CqA9jng",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "compile_score",
-        "slug" : "compile_score",
-        "x" : 280,
-        "y" : 0,
-        "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Evaluates transaction risk by compiling various flags and details for wire transfers.",
-        "autoUpdateComment" : true,
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##TRANSACTION_ID", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FULL_NAME", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##INDIVIDUAL_REASON", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FROM_BANK", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FROM_ACCOUNT_NUMBER", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##TO_BANK", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##TO_ACCOUNT_NUMBER", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##ORIGINATING_COUNTRY", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##ORIG_ISSUE", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##DESTINATION_COUNTRY", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##DEST_ISSUE", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##TRANSACTION_AMOUNT", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FLAG_INDIVIDUAL_REASON", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FLAG_ORIG_COUNTRY", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FLAG_DEST_COUNTRY", "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu##FLAG_TRANS_AMOUNT" ],
-        "expressions" : [ {
-          "expression" : {
-            "expression" : "TRANSACTION_ID"
-          },
-          "alias" : "TRANSACTION_ID",
-          "_row_id" : "1612122527"
-        }, {
-          "expression" : {
-            "expression" : "FULL_NAME"
-          },
-          "alias" : "FULL_NAME",
-          "_row_id" : "335104844"
-        }, {
-          "expression" : {
-            "expression" : "INDIVIDUAL_REASON"
-          },
-          "alias" : "INDIVIDUAL_REASON",
-          "_row_id" : "2041978982"
-        }, {
-          "expression" : {
-            "expression" : "FROM_BANK"
-          },
-          "alias" : "FROM_BANK",
-          "_row_id" : "723164411"
-        }, {
-          "expression" : {
-            "expression" : "FROM_ACCOUNT_NUMBER"
-          },
-          "alias" : "FROM_ACCOUNT_NUMBER",
-          "_row_id" : "20058781"
-        }, {
-          "expression" : {
-            "expression" : "TO_BANK"
-          },
-          "alias" : "TO_BANK",
-          "_row_id" : "1540395573"
-        }, {
-          "expression" : {
-            "expression" : "TO_ACCOUNT_NUMBER"
-          },
-          "alias" : "TO_ACCOUNT_NUMBER",
-          "_row_id" : "1914175916"
-        }, {
-          "expression" : {
-            "expression" : "ORIGINATING_COUNTRY"
-          },
-          "alias" : "ORIGINATING_COUNTRY",
-          "_row_id" : "1319156022"
-        }, {
-          "expression" : {
-            "expression" : "ORIG_ISSUE"
-          },
-          "alias" : "ORIG_ISSUE",
-          "_row_id" : "634146445"
-        }, {
-          "expression" : {
-            "expression" : "DESTINATION_COUNTRY"
-          },
-          "alias" : "DESTINATION_COUNTRY",
-          "_row_id" : "1838854837"
-        }, {
-          "expression" : {
-            "expression" : "DEST_ISSUE"
-          },
-          "alias" : "DEST_ISSUE",
-          "_row_id" : "1818253106"
-        }, {
-          "expression" : {
-            "expression" : "TRANSACTION_AMOUNT"
-          },
-          "alias" : "TRANSACTION_AMOUNT",
-          "_row_id" : "2047691088"
-        }, {
-          "expression" : {
-            "expression" : "FLAG_INDIVIDUAL_REASON"
-          },
-          "alias" : "FLAG_INDIVIDUAL_REASON",
-          "_row_id" : "1837125365"
-        }, {
-          "expression" : {
-            "expression" : "FLAG_ORIG_COUNTRY"
-          },
-          "alias" : "FLAG_ORIG_COUNTRY",
-          "_row_id" : "1194523401"
-        }, {
-          "expression" : {
-            "expression" : "FLAG_DEST_COUNTRY"
-          },
-          "alias" : "FLAG_DEST_COUNTRY",
-          "_row_id" : "1177383289"
-        }, {
-          "expression" : {
-            "expression" : "FLAG_TRANS_AMOUNT"
-          },
-          "alias" : "FLAG_TRANS_AMOUNT",
-          "_row_id" : "1740277499"
-        }, {
-          "expression" : {
-            "expression" : "(FLAG_INDIVIDUAL_REASON + FLAG_ORIG_COUNTRY + FLAG_DEST_COUNTRY + FLAG_TRANS_AMOUNT)"
-          },
-          "alias" : "risk_score",
-          "_row_id" : "9JlbwZYxCp"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu",
-          "slug" : "wire_transfer_details_1"
-        } ],
-        "outputs" : [ {
-          "id" : "Y-pl-weVsjYmzh8qrXeCQ$$f85SuHhABE4A8A1ZgFA8C",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "tyJjAOM6gsZDPdtXDBkxf$$d1rCXeJs3nPne36G2aqLF" : {
-      "id" : "tyJjAOM6gsZDPdtXDBkxf$$d1rCXeJs3nPne36G2aqLF",
+    "sorted_compile_s##K714Ppad" : {
+      "id" : "sorted_compile_s##K714Ppad",
       "component" : "OrderBy",
       "metadata" : {
         "label" : "sorted_compile_score",
-        "slug" : "sorted_compile_score",
-        "x" : 440,
-        "y" : 0,
+        "x" : 1080,
+        "y" : 320,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Ranks compile scores by risk, prioritizing higher scores for risk assessment.",
-        "autoUpdateComment" : true,
+        "comment" : "Ranks compile scores by risk level, prioritizing higher risks for attention.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ "zRenLvP88OLsQV34DUZ1d$$SkFYhdJKP4IeXHOkGjet5##RISK_SCORE" ],
+        "columnsSelector" : [ ],
         "orders" : [ {
           "expression" : {
             "expression" : "RISK_SCORE"
@@ -448,85 +74,239 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "zRenLvP88OLsQV34DUZ1d$$SkFYhdJKP4IeXHOkGjet5",
+          "id" : "ONUE0wjG",
           "slug" : "compile_score"
         } ],
         "outputs" : [ {
-          "id" : "8Zsku3QZtktPp7M4lxMb1$$0bwKJbGVI68jl7YQ4f21J",
+          "id" : "F2tvdgd0",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 8
     },
-    "FinancialCrimesScoring##w4G7dz7p" : {
-      "id" : "FinancialCrimesScoring##w4G7dz7p",
-      "component" : "TargetModel",
+    "DEST_COUNTRY##wOLqzWaB" : {
+      "id" : "DEST_COUNTRY##wOLqzWaB",
+      "component" : "Source",
       "metadata" : {
-        "label" : "FinancialCrimesScoring",
-        "x" : 600,
-        "y" : 0,
+        "label" : "DEST_COUNTRY",
+        "x" : 220,
+        "y" : 420,
         "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Utilizes compiled scores to assess potential financial crime risks.",
-        "autoUpdateComment" : true
+        "comment" : "Accesses a list of countries flagged for financial crimes.",
+        "isLabelGrayed" : false
       },
       "properties" : {
-        "customQueryDisabled" : true,
-        "customQuery" : false,
-        "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM sorted_compile_score\n",
-        "incrementalKey" : false,
-        "incremental" : {
-          "expression" : "true"
+        "table" : {
+          "name" : "COUNTRY_WATCHLIST",
+          "sourceType" : "Source",
+          "sourceName" : "BOBW.FINANCIALCRIMES"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "DyCa28tX",
-          "slug" : "sorted_compile_score"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "MAhjmaEN",
+          "id" : "k7JwytF7",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 4
     },
-    "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr" : {
-      "id" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
+    "ORIG_COUNTRY##NJUwuXlY" : {
+      "id" : "ORIG_COUNTRY##NJUwuXlY",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ORIG_COUNTRY",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Extracts data from the financial crimes country watchlist for compliance and risk assessment.",
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "table" : {
+          "name" : "COUNTRY_WATCHLIST",
+          "sourceType" : "Source",
+          "sourceName" : "BOBW.FINANCIALCRIMES"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "vucNpey5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "index" : 2
+    },
+    "compile_score##gGbbqvXk" : {
+      "id" : "compile_score##gGbbqvXk",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "compile_score",
+        "x" : 880,
+        "y" : 320,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Evaluates transaction risk by analyzing various factors associated with wire transfers.",
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "TRANSACTION_ID"
+          },
+          "alias" : "TRANSACTION_ID",
+          "_row_id" : "1646273588"
+        }, {
+          "expression" : {
+            "expression" : "FULL_NAME"
+          },
+          "alias" : "FULL_NAME",
+          "_row_id" : "771904304"
+        }, {
+          "expression" : {
+            "expression" : "INDIVIDUAL_REASON"
+          },
+          "alias" : "INDIVIDUAL_REASON",
+          "_row_id" : "290625094"
+        }, {
+          "expression" : {
+            "expression" : "FROM_BANK"
+          },
+          "alias" : "FROM_BANK",
+          "_row_id" : "41745634"
+        }, {
+          "expression" : {
+            "expression" : "FROM_ACCOUNT_NUMBER"
+          },
+          "alias" : "FROM_ACCOUNT_NUMBER",
+          "_row_id" : "1267418958"
+        }, {
+          "expression" : {
+            "expression" : "TO_BANK"
+          },
+          "alias" : "TO_BANK",
+          "_row_id" : "160816495"
+        }, {
+          "expression" : {
+            "expression" : "TO_ACCOUNT_NUMBER"
+          },
+          "alias" : "TO_ACCOUNT_NUMBER",
+          "_row_id" : "1386144225"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATING_COUNTRY"
+          },
+          "alias" : "ORIGINATING_COUNTRY",
+          "_row_id" : "727828294"
+        }, {
+          "expression" : {
+            "expression" : "ORIG_ISSUE"
+          },
+          "alias" : "ORIG_ISSUE",
+          "_row_id" : "1974348302"
+        }, {
+          "expression" : {
+            "expression" : "DESTINATION_COUNTRY"
+          },
+          "alias" : "DESTINATION_COUNTRY",
+          "_row_id" : "697697208"
+        }, {
+          "expression" : {
+            "expression" : "DEST_ISSUE"
+          },
+          "alias" : "DEST_ISSUE",
+          "_row_id" : "99730566"
+        }, {
+          "expression" : {
+            "expression" : "TRANSACTION_AMOUNT"
+          },
+          "alias" : "TRANSACTION_AMOUNT",
+          "_row_id" : "796346666"
+        }, {
+          "expression" : {
+            "expression" : "FLAG_INDIVIDUAL_REASON"
+          },
+          "alias" : "FLAG_INDIVIDUAL_REASON",
+          "_row_id" : "262606433"
+        }, {
+          "expression" : {
+            "expression" : "FLAG_ORIG_COUNTRY"
+          },
+          "alias" : "FLAG_ORIG_COUNTRY",
+          "_row_id" : "756954811"
+        }, {
+          "expression" : {
+            "expression" : "FLAG_DEST_COUNTRY"
+          },
+          "alias" : "FLAG_DEST_COUNTRY",
+          "_row_id" : "1169837892"
+        }, {
+          "expression" : {
+            "expression" : "FLAG_TRANS_AMOUNT"
+          },
+          "alias" : "FLAG_TRANS_AMOUNT",
+          "_row_id" : "1797883008"
+        }, {
+          "expression" : {
+            "expression" : "(FLAG_INDIVIDUAL_REASON + FLAG_ORIG_COUNTRY + FLAG_DEST_COUNTRY + FLAG_TRANS_AMOUNT)"
+          },
+          "alias" : "risk_score",
+          "_row_id" : "1682754470"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NBYentDM",
+          "slug" : "wire_transfer_details_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Zuq4syc2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "index" : 7
+    },
+    "wire_transfer_jo##LFZawXMf" : {
+      "id" : "wire_transfer_jo##LFZawXMf",
       "component" : "Join",
       "metadata" : {
         "label" : "wire_transfer_joins",
-        "slug" : "wire_transfer_joins",
-        "x" : -60,
-        "y" : 0,
+        "x" : 480,
+        "y" : 300,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Combines wire transfer details with country issues and watchlist information for enhanced transaction monitoring.",
-        "autoUpdateComment" : true,
+        "comment" : "Compiles detailed information on wire transfers, including origin and destination country issues and individual watchlist reasons.",
         "isLabelGrayed" : false
       },
       "properties" : {
         "conditions" : [ {
           "alias" : "in1",
           "expression" : {
-            "expression" : "in0.ORIGINATING_COUNTRY=in1.COUNTRY"
+            "expression" : "in0.ORIGINATING_COUNTRY = in1.COUNTRY"
           },
-          "joinType" : "left"
+          "joinType" : "LEFT"
         }, {
           "alias" : "in2",
           "expression" : {
-            "expression" : "in0.DESTINATION_COUNTRY=in2.COUNTRY"
+            "expression" : "in0.DESTINATION_COUNTRY = in2.COUNTRY"
           },
-          "joinType" : "left"
+          "joinType" : "LEFT"
         }, {
           "alias" : "in3",
           "expression" : {
-            "expression" : "in0.FULL_NAME=in3.FULL_NAME"
+            "expression" : "in0.FULL_NAME = in3.FULL_NAME"
           },
-          "joinType" : "left"
+          "joinType" : "LEFT"
         } ],
         "allowSelection" : false,
         "expressions" : [ {
@@ -534,214 +314,429 @@
             "expression" : "in0.TRANSACTION_ID"
           },
           "alias" : "TRANSACTION_ID",
-          "_row_id" : "263942938"
+          "_row_id" : "1620061928"
         }, {
           "expression" : {
             "expression" : "in0.FULL_NAME"
           },
           "alias" : "FULL_NAME",
-          "_row_id" : "77949022"
+          "_row_id" : "384856593"
         }, {
           "expression" : {
             "expression" : "in0.FROM_BANK"
           },
           "alias" : "FROM_BANK",
-          "_row_id" : "1577641967"
+          "_row_id" : "1789673516"
         }, {
           "expression" : {
             "expression" : "in0.FROM_ACCOUNT_NUMBER"
           },
           "alias" : "FROM_ACCOUNT_NUMBER",
-          "_row_id" : "1072291008"
+          "_row_id" : "1157471335"
         }, {
           "expression" : {
             "expression" : "in0.TO_BANK"
           },
           "alias" : "TO_BANK",
-          "_row_id" : "988831445"
+          "_row_id" : "805610515"
         }, {
           "expression" : {
             "expression" : "in0.TO_ACCOUNT_NUMBER"
           },
           "alias" : "TO_ACCOUNT_NUMBER",
-          "_row_id" : "1047835328"
+          "_row_id" : "697204045"
         }, {
           "expression" : {
             "expression" : "in0.ORIGINATING_COUNTRY"
           },
           "alias" : "ORIGINATING_COUNTRY",
-          "_row_id" : "1429030325"
+          "_row_id" : "388897321"
         }, {
           "expression" : {
             "expression" : "in1.ISSUE"
           },
           "alias" : "ORIG_ISSUE",
-          "_row_id" : "843820317"
+          "_row_id" : "642642652"
         }, {
           "expression" : {
             "expression" : "in0.DESTINATION_COUNTRY"
           },
           "alias" : "DESTINATION_COUNTRY",
-          "_row_id" : "2064622862"
+          "_row_id" : "2097585752"
         }, {
           "expression" : {
             "expression" : "in2.ISSUE"
           },
           "alias" : "DEST_ISSUE",
-          "_row_id" : "1765029043"
+          "_row_id" : "741427523"
         }, {
           "expression" : {
             "expression" : "in0.TRANSACTION_AMOUNT"
           },
           "alias" : "TRANSACTION_AMOUNT",
-          "_row_id" : "2024755173"
+          "_row_id" : "1344213588"
         }, {
           "expression" : {
             "expression" : "in3.REASON"
           },
           "alias" : "INDIVIDUAL_REASON",
-          "_row_id" : "2085822141"
+          "_row_id" : "57449445"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##ORIGINATING_COUNTRY", "9NnHYWh8CUlD6K-Li4iqA$$6pgPTks4QX_SmLRzsZ86_##COUNTRY", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##DESTINATION_COUNTRY", "sBPAoYiv0Xw_nIvopvuIC$$lF2xPa3Q9OKnD16AVyQSN##COUNTRY", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##FULL_NAME", "o7nVRPXMBSNocBrQZiu1E$$K7wATvM9L82Wlq9fMogBH##FULL_NAME", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##TRANSACTION_ID", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##FULL_NAME", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##FROM_BANK", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##FROM_ACCOUNT_NUMBER", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##TO_BANK", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##TO_ACCOUNT_NUMBER", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##ORIGINATING_COUNTRY", "9NnHYWh8CUlD6K-Li4iqA$$6pgPTks4QX_SmLRzsZ86_##ISSUE", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##DESTINATION_COUNTRY", "sBPAoYiv0Xw_nIvopvuIC$$lF2xPa3Q9OKnD16AVyQSN##ISSUE", "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK##TRANSACTION_AMOUNT", "o7nVRPXMBSNocBrQZiu1E$$K7wATvM9L82Wlq9fMogBH##REASON" ],
+        "columnsSelector" : [ ],
         "headAlias" : "in0"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK",
+          "id" : "LpFGiuWT",
           "slug" : "in0"
         }, {
-          "id" : "9NnHYWh8CUlD6K-Li4iqA$$6pgPTks4QX_SmLRzsZ86_",
+          "id" : "bGIapqvX",
           "slug" : "in1"
         }, {
-          "id" : "sBPAoYiv0Xw_nIvopvuIC$$lF2xPa3Q9OKnD16AVyQSN",
+          "id" : "LVRpRCeU",
           "slug" : "in2"
         }, {
-          "id" : "o7nVRPXMBSNocBrQZiu1E$$K7wATvM9L82Wlq9fMogBH",
+          "id" : "n22AfsQG",
           "slug" : "in3"
         } ],
         "outputs" : [ {
-          "id" : "7ztnMbRzHGksE6mghEvBG$$M3KimCGVmqH0W97u7d7GL",
+          "id" : "Gs3vlChS",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 5
     },
-    "UPiirf4YPyv4Kw78dsHmK" : {
-      "id" : "UPiirf4YPyv4Kw78dsHmK",
-      "component" : "Source",
+    "final##ueXComaD" : {
+      "id" : "final##ueXComaD",
+      "component" : "TargetModel",
       "metadata" : {
-        "label" : "DEST_COUNTRY",
-        "slug" : "DEST_COUNTRY",
-        "x" : -360,
-        "y" : 80,
+        "label" : "FinancialCrimesScoring",
+        "x" : 1280,
+        "y" : 320,
         "phase" : 0,
         "isLabelGrayed" : false
       },
       "properties" : {
-        "table" : {
-          "name" : "COUNTRY_WATCHLIST",
-          "sourceType" : "Source",
-          "sourceName" : "BOBW.FINANCIALCRIMES",
-          "alias" : "",
-          "additionalProperties" : null
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT *\n\nFROM sorted_compile_score\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
         }
       },
       "ports" : {
-        "inputs" : [ ],
+        "inputs" : [ {
+          "id" : "ZjAVKZv3",
+          "slug" : "sorted_compile_score"
+        } ],
         "outputs" : [ {
-          "id" : "eiU77JnAbLDlyhCAGcDOy",
+          "id" : "Pm5MdUYn",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 9
     },
-    "d4xwwwuuhojJbab2g828t" : {
-      "id" : "d4xwwwuuhojJbab2g828t",
+    "WIRE_TRANSFERS##L4FC2oLC" : {
+      "id" : "WIRE_TRANSFERS##L4FC2oLC",
       "component" : "Source",
       "metadata" : {
         "label" : "WIRE_TRANSFERS",
-        "slug" : "WIRE_TRANSFERS",
-        "x" : -360,
-        "y" : -200,
-        "phase" : 0
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "comment" : "Accesses wire transfer data for financial crime analysis.",
+        "isLabelGrayed" : false
       },
       "properties" : {
         "table" : {
           "name" : "WIRE_TRANSFERS",
           "sourceType" : "Source",
-          "sourceName" : "BOBW.FINANCIALCRIMES",
-          "alias" : "",
-          "additionalProperties" : null
+          "sourceName" : "BOBW.FINANCIALCRIMES"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "bEPlefbc6PcK9jRiQluBg",
+          "id" : "OBYcotU7",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 0
+    },
+    "score_trans##AGeNuAQH" : {
+      "id" : "score_trans##AGeNuAQH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "score_trans",
+        "x" : 680,
+        "y" : 320,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Evaluates wire transfer transactions, flagging those with specified reasons and transaction amounts between $5000 and $10000 for further review.",
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "TRANSACTION_ID"
+          },
+          "alias" : "TRANSACTION_ID",
+          "_row_id" : "603344450"
+        }, {
+          "expression" : {
+            "expression" : "FULL_NAME"
+          },
+          "alias" : "FULL_NAME",
+          "_row_id" : "1580762513"
+        }, {
+          "expression" : {
+            "expression" : "INDIVIDUAL_REASON"
+          },
+          "alias" : "INDIVIDUAL_REASON",
+          "_row_id" : "2095607212"
+        }, {
+          "expression" : {
+            "expression" : "FROM_BANK"
+          },
+          "alias" : "FROM_BANK",
+          "_row_id" : "793689182"
+        }, {
+          "expression" : {
+            "expression" : "FROM_ACCOUNT_NUMBER"
+          },
+          "alias" : "FROM_ACCOUNT_NUMBER",
+          "_row_id" : "1329504870"
+        }, {
+          "expression" : {
+            "expression" : "TO_BANK"
+          },
+          "alias" : "TO_BANK",
+          "_row_id" : "1116438236"
+        }, {
+          "expression" : {
+            "expression" : "TO_ACCOUNT_NUMBER"
+          },
+          "alias" : "TO_ACCOUNT_NUMBER",
+          "_row_id" : "1160454986"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATING_COUNTRY"
+          },
+          "alias" : "ORIGINATING_COUNTRY",
+          "_row_id" : "1863183777"
+        }, {
+          "expression" : {
+            "expression" : "ORIG_ISSUE"
+          },
+          "alias" : "ORIG_ISSUE",
+          "_row_id" : "1206918673"
+        }, {
+          "expression" : {
+            "expression" : "DESTINATION_COUNTRY"
+          },
+          "alias" : "DESTINATION_COUNTRY",
+          "_row_id" : "2023731740"
+        }, {
+          "expression" : {
+            "expression" : "DEST_ISSUE"
+          },
+          "alias" : "DEST_ISSUE",
+          "_row_id" : "832908775"
+        }, {
+          "expression" : {
+            "expression" : "TRANSACTION_AMOUNT"
+          },
+          "alias" : "TRANSACTION_AMOUNT",
+          "_row_id" : "684293614"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN INDIVIDUAL_REASON IS NOT NULL AND INDIVIDUAL_REASON <> ''\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "flag_individual_reason",
+          "_row_id" : "57315425"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN ORIG_ISSUE IS NOT NULL AND ORIG_ISSUE <> ''\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "flag_orig_country",
+          "_row_id" : "793186798"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN DEST_ISSUE IS NOT NULL AND DEST_ISSUE <> ''\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "flag_dest_country",
+          "_row_id" : "1503881442"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN TRANSACTION_AMOUNT >= 5000 AND TRANSACTION_AMOUNT < 10000\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "flag_trans_amount",
+          "_row_id" : "287668696"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "krgrrKhO",
+          "slug" : "wire_transfer_joins"
+        } ],
+        "outputs" : [ {
+          "id" : "dLSVg4Jp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "index" : 6
+    },
+    "wire_transfer_de##nUqwotZ2" : {
+      "id" : "wire_transfer_de##nUqwotZ2",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "wire_transfer_details",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Compiles detailed information on wire transfer transactions for better tracking and analysis.",
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "TRANSACTION_ID"
+          },
+          "alias" : "TRANSACTION_ID",
+          "_row_id" : "1645873405"
+        }, {
+          "expression" : {
+            "expression" : "CONCAT(FIRST_NAME, ' ', LAST_NAME)"
+          },
+          "alias" : "full_name",
+          "_row_id" : "742697868"
+        }, {
+          "expression" : {
+            "expression" : "FROM_BANK"
+          },
+          "alias" : "FROM_BANK",
+          "_row_id" : "721127820"
+        }, {
+          "expression" : {
+            "expression" : "FROM_ACCOUNT_NUMBER"
+          },
+          "alias" : "FROM_ACCOUNT_NUMBER",
+          "_row_id" : "510521928"
+        }, {
+          "expression" : {
+            "expression" : "TO_BANK"
+          },
+          "alias" : "TO_BANK",
+          "_row_id" : "1431012884"
+        }, {
+          "expression" : {
+            "expression" : "TO_ACCOUNT_NUMBER"
+          },
+          "alias" : "TO_ACCOUNT_NUMBER",
+          "_row_id" : "1141676643"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATING_COUNTRY"
+          },
+          "alias" : "ORIGINATING_COUNTRY",
+          "_row_id" : "470089312"
+        }, {
+          "expression" : {
+            "expression" : "DESTINATION_COUNTRY"
+          },
+          "alias" : "DESTINATION_COUNTRY",
+          "_row_id" : "577257304"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(TRANSACTION_AMOUNT, 2)"
+          },
+          "alias" : "transaction_amount",
+          "_row_id" : "884377236"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wQUOuqEm",
+          "slug" : "WIRE_TRANSFERS"
+        } ],
+        "outputs" : [ {
+          "id" : "J8Kkdwhv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "index" : 1
     }
   },
   "connections" : [ {
-    "id" : "8L4K1KxSCdAmybW4TXKE1$$A_rtk3WzyCpbb-BNyh2QF",
-    "source" : "d4xwwwuuhojJbab2g828t",
-    "sourcePort" : "bEPlefbc6PcK9jRiQluBg",
-    "target" : "fAl7lH7lsz-ET4Xw0aDZi$$zl0zkulcAXwgzhrzxSoh5",
-    "targetPort" : "zBsQMHC7Ltokw7ijIHWch$$Kdgo87o1pSq63-bt4VCBI"
+    "id" : "QjQ8HoLN",
+    "source" : "WIRE_TRANSFERS##L4FC2oLC",
+    "sourcePort" : "OBYcotU7",
+    "target" : "wire_transfer_de##nUqwotZ2",
+    "targetPort" : "wQUOuqEm"
   }, {
-    "id" : "crCXdY-l1DkQlmXRBKTtC$$1a5LxrmhfEm4KH_ohY3oi",
-    "source" : "fAl7lH7lsz-ET4Xw0aDZi$$zl0zkulcAXwgzhrzxSoh5",
-    "sourcePort" : "OeA9aR0gVCCL6AdBSJ5sn$$zvVp4CNp1wWpHLoDKjUBc",
-    "target" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
-    "targetPort" : "w_3et9nR9jvVHnWmZ0Ofu$$I_JJGoe4XxtTldmxzXOWK"
+    "id" : "HDX2MufD",
+    "source" : "wire_transfer_de##nUqwotZ2",
+    "sourcePort" : "J8Kkdwhv",
+    "target" : "wire_transfer_jo##LFZawXMf",
+    "targetPort" : "LpFGiuWT"
   }, {
-    "id" : "thUMAt5x3r9sWHmcI4bUM",
-    "source" : "kQ17OGjbimrKmEdYPEwmE",
-    "sourcePort" : "y3xwoQ4SzOL_0M0D9Swm_",
-    "target" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
-    "targetPort" : "9NnHYWh8CUlD6K-Li4iqA$$6pgPTks4QX_SmLRzsZ86_"
+    "id" : "KERAx7Ri",
+    "source" : "ORIG_COUNTRY##NJUwuXlY",
+    "sourcePort" : "vucNpey5",
+    "target" : "wire_transfer_jo##LFZawXMf",
+    "targetPort" : "bGIapqvX"
   }, {
-    "id" : "PQTTrytXxuBAMAq87v7jj",
-    "source" : "UPiirf4YPyv4Kw78dsHmK",
-    "sourcePort" : "eiU77JnAbLDlyhCAGcDOy",
-    "target" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
-    "targetPort" : "sBPAoYiv0Xw_nIvopvuIC$$lF2xPa3Q9OKnD16AVyQSN"
+    "id" : "wXzhKVgq",
+    "source" : "DEST_COUNTRY##wOLqzWaB",
+    "sourcePort" : "k7JwytF7",
+    "target" : "wire_transfer_jo##LFZawXMf",
+    "targetPort" : "LVRpRCeU"
   }, {
-    "id" : "o--no5JLwyKNN5Pvd35Cl",
-    "source" : "T-8ypAs3IZ2jbVuh4WGQp",
-    "sourcePort" : "huGZ2DnahRzU96xt0J59z",
-    "target" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
-    "targetPort" : "o7nVRPXMBSNocBrQZiu1E$$K7wATvM9L82Wlq9fMogBH"
+    "id" : "IMddke6f",
+    "source" : "INDIVIDUAL_WATCH##dbtSIAkK",
+    "sourcePort" : "iIqfcMn7",
+    "target" : "wire_transfer_jo##LFZawXMf",
+    "targetPort" : "n22AfsQG"
   }, {
-    "id" : "-NkWQIlzljoR_vCKYZG4k$$HvwjtTk9_pg9dRQbjm2Iu",
-    "source" : "jvhj7B92DNKyKEc57RdYf$$qYAka38Op_WKpPnMJ3Ssr",
-    "sourcePort" : "7ztnMbRzHGksE6mghEvBG$$M3KimCGVmqH0W97u7d7GL",
-    "target" : "mk2Zqi3exOWjg_n7GsKfo$$AXOPDx1x36v7dY8zMxkUr",
-    "targetPort" : "wCm3ZRRABwEYQ7BvP-IR_$$DwL964Dk6ExVj48wyMQYU"
+    "id" : "mQMPb8x6",
+    "source" : "wire_transfer_jo##LFZawXMf",
+    "sourcePort" : "Gs3vlChS",
+    "target" : "score_trans##AGeNuAQH",
+    "targetPort" : "krgrrKhO"
   }, {
-    "id" : "4YQjLPw4oElEIVeqLmtg4$$Gh8MGcA2hXCxIA47yRuYl",
-    "source" : "mk2Zqi3exOWjg_n7GsKfo$$AXOPDx1x36v7dY8zMxkUr",
-    "sourcePort" : "PFbWNw4439bcnPNU2M013$$_x4AFtH_H_OPnOnlKUSLI",
-    "target" : "wUgA6ZQQ794GdIUYQ4gX0$$5iHTNzon-II7-6CqA9jng",
-    "targetPort" : "K9nnVnLJJr-Hq3kvhVV8r$$lRGOIw6m8lEBzOmEDkosu"
+    "id" : "pSWN1FHi",
+    "source" : "score_trans##AGeNuAQH",
+    "sourcePort" : "dLSVg4Jp",
+    "target" : "compile_score##gGbbqvXk",
+    "targetPort" : "NBYentDM"
   }, {
-    "id" : "T0qiJQZcEJeqLHICg7wVm$$1MSE8kEZSHbuFoH_2nG9l",
-    "source" : "wUgA6ZQQ794GdIUYQ4gX0$$5iHTNzon-II7-6CqA9jng",
-    "sourcePort" : "Y-pl-weVsjYmzh8qrXeCQ$$f85SuHhABE4A8A1ZgFA8C",
-    "target" : "tyJjAOM6gsZDPdtXDBkxf$$d1rCXeJs3nPne36G2aqLF",
-    "targetPort" : "zRenLvP88OLsQV34DUZ1d$$SkFYhdJKP4IeXHOkGjet5"
+    "id" : "NNXekUuN",
+    "source" : "compile_score##gGbbqvXk",
+    "sourcePort" : "Zuq4syc2",
+    "target" : "sorted_compile_s##K714Ppad",
+    "targetPort" : "ONUE0wjG"
   }, {
-    "id" : "KAhyh0aV_-kY-oO1IWOEt$$iCpbygETDr8xh2HecAfx7",
-    "source" : "tyJjAOM6gsZDPdtXDBkxf$$d1rCXeJs3nPne36G2aqLF",
-    "sourcePort" : "8Zsku3QZtktPp7M4lxMb1$$0bwKJbGVI68jl7YQ4f21J",
-    "target" : "FinancialCrimesScoring##w4G7dz7p",
-    "targetPort" : "DyCa28tX"
+    "id" : "KyGd5lK9",
+    "source" : "sorted_compile_s##K714Ppad",
+    "sourcePort" : "F2tvdgd0",
+    "target" : "final##ueXComaD",
+    "targetPort" : "ZjAVKZv3"
   } ],
   "component" : "Model"
 }

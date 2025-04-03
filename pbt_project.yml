@@ -81,7 +81,11 @@ sqlModels:
       - name: RISK_SCORE
         dataType:
           type: Number
-    description: Scored wire transfers
+    description: Analyzes wire transfer transactions by integrating details from various
+      sources, including country watchlists and individual watchlists. It assesses
+      transaction risks through flags based on specific criteria, such as transaction
+      amounts and issues related to originating and destination countries. The final
+      output ranks transactions by risk score for enhanced monitoring.
     author: bobw@prophecy.io
     files:
     - models/FinancialCrimesScoring.sql

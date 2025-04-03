@@ -8,6 +8,7 @@
 
 WITH WIRE_TRANSFERS AS (
 
+  {#Accesses wire transfer data for financial crime analysis.#}
   SELECT * 
   
   FROM {{ source('BOBW.FINANCIALCRIMES', 'WIRE_TRANSFERS') }}
@@ -34,6 +35,7 @@ wire_transfer_details AS (
 
 ORIG_COUNTRY AS (
 
+  {#Extracts data from the financial crimes country watchlist for compliance and risk assessment.#}
   SELECT * 
   
   FROM {{ source('BOBW.FINANCIALCRIMES', 'COUNTRY_WATCHLIST') }}
@@ -42,6 +44,7 @@ ORIG_COUNTRY AS (
 
 INDIVIDUAL_WATCHLIST AS (
 
+  {#Accesses the individual watchlist for monitoring financial crimes.#}
   SELECT * 
   
   FROM {{ source('BOBW.FINANCIALCRIMES', 'INDIVIDUAL_WATCHLIST') }}
@@ -50,6 +53,7 @@ INDIVIDUAL_WATCHLIST AS (
 
 DEST_COUNTRY AS (
 
+  {#Accesses a list of countries flagged for financial crimes.#}
   SELECT * 
   
   FROM {{ source('BOBW.FINANCIALCRIMES', 'COUNTRY_WATCHLIST') }}
@@ -58,7 +62,7 @@ DEST_COUNTRY AS (
 
 wire_transfer_joins AS (
 
-  {#Combines wire transfer details with country issues and watchlist information for enhanced transaction monitoring.#}
+  {#Compiles detailed information on wire transfers, including origin and destination country issues and individual watchlist reasons.#}
   SELECT 
     in0.TRANSACTION_ID AS TRANSACTION_ID,
     in0.FULL_NAME AS FULL_NAME,
@@ -85,7 +89,7 @@ wire_transfer_joins AS (
 
 score_trans AS (
 
-  {#Gathers detailed information on wire transfers, highlighting key factors such as transaction amounts and reasons for transfers.#}
+  {#Evaluates wire transfer transactions, flagging those with specified reasons and transaction amounts between $5000 and $10000 for further review.#}
   SELECT 
     TRANSACTION_ID AS TRANSACTION_ID,
     FULL_NAME AS FULL_NAME,
@@ -126,7 +130,7 @@ score_trans AS (
 
 compile_score AS (
 
-  {#Evaluates transaction risk by compiling various flags and details for wire transfers.#}
+  {#Evaluates transaction risk by analyzing various factors associated with wire transfers.#}
   SELECT 
     TRANSACTION_ID AS TRANSACTION_ID,
     FULL_NAME AS FULL_NAME,
@@ -152,7 +156,7 @@ compile_score AS (
 
 sorted_compile_score AS (
 
-  {#Ranks compile scores by risk, prioritizing higher scores for risk assessment.#}
+  {#Ranks compile scores by risk level, prioritizing higher risks for attention.#}
   SELECT * 
   
   FROM compile_score
